@@ -1,0 +1,9 @@
+
+# doc - https://git-scm.com/docs/gitignore
+# Explicit directory matching
+_site/
+.sass-cache/
+.jekyll-metadata/
+
+# File pattern matching
+tmp-*
