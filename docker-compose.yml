@@ -1,0 +1,22 @@
+# Version 3 of the Docker Compose
+# reference: https://docs.docker.com/compose/compose-file/
+# cli reference: https://docs.docker.com/compose/reference/overview/
+version: '3'
+services:
+  myjava:
+    build: ./env
+    image: myjava
+    container_name: myjava
+    environment:
+      LANG: C.UTF-8
+      TEST: "development"
+    volumes:
+#      - ./tmp-vault/logs:/vault/logs:rw
+#      - ./sample-vault/vault-config.hcl:/vault/config/vault-config.hcl:rw
+#      - ./tmp-vault/file:/vault/file:rw
+      - ./:/wip
+#    ports:
+#      - "127.0.0.1:8200:8200"
+    entrypoint: /bin/sh
+    command: -c "while true; do sleep 1; done" # Simple Daemon
+
